@@ -43,5 +43,8 @@ class StockIndexRepositoryTest(unittest.TestCase):
         self.assertRaises(stockindexrepository.RepositoryException,
                 stockindexrepository.StockIndexRepository().delete, 22)
 
+    def testMean(self):
+        self.assertTrue(abs(stockindexrepository.StockIndexRepository().getById(1).mean - 1950.0) < 0.0001)
+
 if __name__ == "__main__":
     unittest.main()
